@@ -1,7 +1,5 @@
-# memoriesdoc
-a sigin docment doc for showdoc.cc
+# 做最好的自己，
+# 做最有价值的程序！
+# 让志同道合的我们一起扬帆起航。
 
-test  from  in me！
-
-
-from chinese!
+# 道法自然
