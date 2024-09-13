@@ -1,3 +1,4 @@
+// 函数与指针引用
 package main
 
 import (
