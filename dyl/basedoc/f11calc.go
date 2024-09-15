@@ -1,4 +1,5 @@
 // 单元测试 -对应测试文件, _test.go
+// 测试模版需要引入testing库。
 package main
 
 import "fmt"
