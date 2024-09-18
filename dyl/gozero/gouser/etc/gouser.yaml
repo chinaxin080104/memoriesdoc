@@ -1,0 +1,6 @@
+Name: gouser.rpc
+ListenOn: 0.0.0.0:2379
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: gouser.rpc

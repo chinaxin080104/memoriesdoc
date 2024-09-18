@@ -1,6 +1,6 @@
 Name: video
 Host: 0.0.0.0
-Port: 8080
+Port: 8081
 UserRpc:
   Etcd:
     Hosts:
