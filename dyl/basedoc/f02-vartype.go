@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("基础数据类型")
 
 	//整数型
-	//funcuint()
+	funcuint()
 	//funcfloat()
 	funcchar()
 	funcstring()
@@ -40,6 +40,10 @@ func funcuint() {
 	fmt.Println(n1)
 	// var n2 int = 9223372036854775808 //数字超出限制
 	// fmt.Println(n2)
+
+	//连续定义x,y的值。
+	var x, y int
+	fmt.Println(x, y)
 }
 
 func funcfloat() {

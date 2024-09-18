@@ -15,6 +15,8 @@ func main() {
 	//协程间通信。 协程1传递数据给协成2,或者给主进程。
 	//channel
 	main1203()
+	//go 通道的取值
+	main1204()
 }
 
 func singer() {
@@ -93,4 +95,29 @@ func main1203() {
 	//打印变量n,和ok.
 	fmt.Println(n, ok)
 
+}
+
+func main1204() {
+	c1 := make(chan string)
+	c2 := make(chan string)
+
+	go func() {
+		time.Sleep(1 * time.Second)
+		c1 <- "one"
+	}()
+	go func() {
+		time.Sleep(2 * time.Second)
+		c2 <- "two"
+	}()
+
+	for i := 0; i < 2; i++ {
+		select {
+		case msg1 := <-c1:
+			//通道1值的接收。
+			fmt.Println("received", msg1)
+		case msg2 := <-c2:
+			//通道2值的接收
+			fmt.Println("received", msg2)
+		}
+	}
 }
