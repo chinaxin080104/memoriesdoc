@@ -10,7 +10,7 @@ type Config struct {
 	Mysql struct {
 		DataSource string
 	}
-	Auth AuthConfig
+	//Auth AuthConfig
 }
 
 type AuthConfig struct {

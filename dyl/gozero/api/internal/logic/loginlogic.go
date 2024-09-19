@@ -2,7 +2,6 @@ package logic
 
 import (
 	"context"
-	"errors"
 	"github.com/zeromicro/go-zero/core/logx"
 	"gozero/api/internal/svc"
 	"gozero/api/internal/types"
@@ -25,23 +24,23 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 
 func (l *LoginLogic) Login(req *types.LoginRequest) (resp string, err error) {
 	// todo: add your logic here and delete this line
-	var user model.UserModel
-	err = l.svcCtx.DB.Take(&user, "username = ? and password = ?", req.UserName, req.Password).Error
-	if err != nil {
-		return "", errors.New("登录失败")
-	}
-	return "", errors.New("success")
+	//var user model.UserModel
+	//err = l.svcCtx.DB.Take(&user, "username = ? and password = ?", req.UserName, req.Password).Error
+	//if err != nil {
+	//	return "", errors.New("登录失败")
+	//}
+	//return "", errors.New("success")
 	//操作mysql
 	//添加
-	//l.svcCtx.UsersModel.Insert(context.Background(), &model.User{
-	//	Username: "哈哈哈",
-	//	Password: "123456",
-	//})
+	l.svcCtx.UsersModel.Insert(context.Background(), &model.User{
+		Username: "乔峰",
+		Password: "123456",
+	})
 	//
-	//insert, err := l.svcCtx.UsersModel.Insert(context.Background(), &model.User{
-	//	Username: "枫枫",
-	//	Password: "123456",
-	//})
+	l.svcCtx.UsersModel.Insert(context.Background(), &model.User{
+		Username: "慕容",
+		Password: "123456",
+	})
 	//if err != nil {
 	//	return "", err
 	//}
@@ -80,5 +79,5 @@ func (l *LoginLogic) Login(req *types.LoginRequest) (resp string, err error) {
 	//	return "", err
 	//}
 	//
-	//return token, err
+	return
 }

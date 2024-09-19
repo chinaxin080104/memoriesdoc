@@ -2,7 +2,6 @@ package logic
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"gozero/api/internal/types"
 
@@ -27,13 +26,12 @@ func NewUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserInfo
 func (l *UserInfoLogic) UserInfo() (resp *types.UserInfoResponse, err error) {
 	// todo: add your logic here and delete this line
 
-	userId := l.ctx.Value("user_id").(json.Number)
-	fmt.Printf("%v, %T, \n", userId, userId)
-	username := l.ctx.Value("username").(string)
-	uid, _ := userId.Int64()
+	user, err := l.svcCtx.UsersModel.FindOne(context.Background(), 1)
+	user2, err := l.svcCtx.UsersModel.FindOne(context.Background(), 2)
+	fmt.Println(user, user2, err)
 
 	return &types.UserInfoResponse{
-		Id:       uint(uid),
-		UserName: username,
+		Id:       uint(user2.Id),
+		UserName: user2.Username,
 	}, nil
 }
