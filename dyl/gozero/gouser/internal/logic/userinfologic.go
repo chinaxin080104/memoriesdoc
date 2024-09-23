@@ -28,6 +28,6 @@ func (l *UserInfoLogic) UserInfo(in *gouser.UserInfoRequest) (*gouser.UserInfoRe
 
 	return &gouser.UserInfoResponse{
 		UserId:   in.UserId,
-		Username: "枫枫",
+		Username: "英语六级",
 	}, nil
 }
