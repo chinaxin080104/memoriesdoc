@@ -59,19 +59,21 @@ type People struct {
 	Time string
 }
 
-func (p People) Info() {
-	fmt.Println("people", p.Time)
-}
-
+// student2 继承了结构图people
 type Student2 struct {
 	People
 	Name string
 	Age  int
 }
 
+func (p People) Info() {
+	fmt.Println("people", p.Time)
+}
+
 func (s Student2) PrintInfo() {
 	fmt.Printf("name:%s age:%d\n", s.Name, s.Age)
 }
+
 func main02() {
 	p := People{
 		Time: "2024-10-15 14:51",
@@ -85,10 +87,9 @@ func main02() {
 	s.PrintInfo()
 	s.Info() //调用父结构体方法
 
-	//time是一个时间
+	//time是一个时间，这里是父 结构体的调用。
 	fmt.Println(s.People.Time)
 	fmt.Println(s.Time)
-
 }
 
 // -------------------------------------------------------
@@ -101,6 +102,7 @@ type Student struct {
 func SetAge(info Student, age int) {
 	info.Age = age
 }
+
 func SetAge1(info *Student, age int) {
 	info.Age = age
 }
