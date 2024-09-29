@@ -2,6 +2,8 @@ package logic
 
 import (
 	"context"
+	"errors"
+	"fmt"
 	"github.com/zeromicro/go-zero/core/logx"
 	"gozero/api/internal/svc"
 	"gozero/api/internal/types"
@@ -25,10 +27,10 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 func (l *LoginLogic) Login(req *types.LoginRequest) (resp string, err error) {
 	// todo: add your logic here and delete this line
 	//var user model.UserModel
-	//err = l.svcCtx.DB.Take(&user, "username = ? and password = ?", req.UserName, req.Password).Error
-	//if err != nil {
-	//	return "", errors.New("登录失败")
-	//}
+	err = l.svcCtx.DB.Take(&user, "username = ? and password = ?", req.UserName, req.Password).Error
+	if err != nil {
+		return "", errors.New("登录失败")
+	}
 	//return "", errors.New("success")
 	//操作mysql
 	//添加
@@ -41,11 +43,11 @@ func (l *LoginLogic) Login(req *types.LoginRequest) (resp string, err error) {
 		Username: "慕容",
 		Password: "123456",
 	})
-	//if err != nil {
-	//	return "", err
-	//}
-	//fmt.Println(insert)
-	//fmt.Println("登录成功")
+	if err != nil {
+		return "", err
+	}
+	fmt.Println(insert)
+	fmt.Println("登录成功")
 
 	//查询
 	//user, err := l.svcCtx.UsersModel.FindOne(context.Background(), 1)

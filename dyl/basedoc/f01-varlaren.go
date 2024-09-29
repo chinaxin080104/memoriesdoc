@@ -10,8 +10,10 @@ var schoolName = "中华人民共和国。英文为 The People's Republic of Chi
 func main() {
 	// 先定义，在赋值
 	var name string
-	name = "心平气和"
-	fmt.Println(name)
+	name = "心平气和,"
+	var values = "宁静致远"
+
+	fmt.Println(name + values)
 	//var 变量名 类型="变量值"
 	var userEmail string = "735449187@qq.com"
 	fmt.Println(userEmail)

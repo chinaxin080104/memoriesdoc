@@ -1,5 +1,8 @@
 .git
 .idea
 /gozero/.idea
+/golook/.idea
+/golook/doc/*
 /dyl/basedoc/go.mod
 /dyl/basedoc/go.sum
+
